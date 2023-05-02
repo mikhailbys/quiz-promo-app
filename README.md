@@ -9,6 +9,7 @@ Based on:
 - typescript
 - [Create React App](https://github.com/facebook/create-react-app)
 - pwa
+- [indexed db (idb)](https://github.com/jakearchibald/idb#installation)
 
 ## For devs
 
