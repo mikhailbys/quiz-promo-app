@@ -1,0 +1,34 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 10px 24px;
+    font-size: 14px;
+}
+
+.label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: gray;
+}
+
+.label-required:after {
+    content: '*';
+    color: red;
+}
+
+.label-error {
+    color: red;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.input-error:focus {
+    border: 2px solid red;
+    outline: none;
+}
+

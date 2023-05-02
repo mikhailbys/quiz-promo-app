@@ -1,0 +1,12 @@
+.page-container {
+    background-color: darkslategray;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.page-layout {
+    padding: 24px;
+    background-color: white;
+    border-radius: 16px 16px 0 0;
+}

@@ -1,0 +1,13 @@
+.anchor-link-container {
+    margin-top: 32px;
+}
+
+.anchor-link, .anchor-link:link, .anchor-link:visited {
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.anchor-link:active, .anchor-link:hover {
+    color: #253f3f;
+    text-decoration: underline;
+}

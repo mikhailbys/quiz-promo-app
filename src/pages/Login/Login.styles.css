@@ -1,0 +1,19 @@
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 32px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.form-container div:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.form-container div:last-child {
+    margin-top: 48px;
+}

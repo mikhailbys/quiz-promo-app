@@ -1,0 +1,31 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button {
+    height: 42px;
+    padding: 6px;
+    width: inherit;
+    border-radius: 14px;
+    background-color: darkslategray;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+}
+
+.button:hover {
+    background-color: #253f3f;
+}
+
+.button-disabled {
+    background-color: lightgray;
+    cursor: initial;
+}
+
+.button-disabled:hover {
+    background-color: lightgray;
+}
