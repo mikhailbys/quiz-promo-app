@@ -1,0 +1,1 @@
+export {EmbeddedPlayer} from './EmbeddedPlayer.view';
