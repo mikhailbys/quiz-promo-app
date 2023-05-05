@@ -4,6 +4,7 @@ import React from "react";
 import './Header.styles.css';
 import {ReactComponent as LogoutIcon} from '../../static/svg/logout.svg'
 import {useHeaderState} from "./Header.state";
+import {Avatar} from "../Avatar";
 
 export const Header = () => {
     const { username, setToken } = useHeaderState();
@@ -13,7 +14,7 @@ export const Header = () => {
             <div className='h-link-container'>
                 <Link className='h-link' to={AppPaths.PROFILE}>
                     <div className='profile-bar-container'>
-                        <div className='profile-pic'></div>
+                        <Avatar src={''}/>
                         <p className='username'>{`Партнер ${username}`}</p>
                     </div>
                 </Link>

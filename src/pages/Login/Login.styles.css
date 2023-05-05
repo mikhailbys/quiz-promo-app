@@ -17,3 +17,7 @@
 .form-container div:last-child {
     margin-top: 48px;
 }
+
+.login-link {
+    margin-top: 24px;
+}

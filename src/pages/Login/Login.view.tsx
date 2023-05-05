@@ -12,7 +12,7 @@ export const Login = () => {
             <div className='form-container'>
                 {hash ? <SignUpView /> : <SignInForm />}
             </div>
-            {!hash && <Link label='Нет учетной записи?' href={`${pathname}/#signup`} />}
+            {!hash && <Link className='login-link' label='Нет учетной записи?' href={`${pathname}/#signup`} />}
         </div>
     );
 }

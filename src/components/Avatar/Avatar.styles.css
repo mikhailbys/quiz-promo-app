@@ -1,0 +1,15 @@
+.avatar-container {
+    cursor: pointer;
+}
+
+.avatar {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    vertical-align: middle;
+}
+
+.avatar-input {
+
+}
