@@ -1,12 +1,12 @@
 import {useLocation} from "react-router-dom";
+import React from "react";
+
+import {AppPaths} from "../../Router/Router.helpers";
+import {Backward} from "../../components/Backward";
 
 import {SignInForm} from "./SignIn";
 import {SignUpView} from "./SignUp";
-
 import './Login.styles.css';
-import {AppPaths} from "../../Router/Router.helpers";
-import {Backward} from "../../components/Backward";
-import React from "react";
 
 export const Login = () => {
     const { hash} = useLocation();

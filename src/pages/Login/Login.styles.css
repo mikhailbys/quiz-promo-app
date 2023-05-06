@@ -40,3 +40,8 @@
     margin-bottom: 32px;
     font-size: 22px;
 }
+
+.login-error-desc {
+    color: red;
+    font-size: 12px;
+}

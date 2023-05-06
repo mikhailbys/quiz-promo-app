@@ -6,6 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {AppPaths} from "../../../Router/Router.helpers";
 import {initAuthModel} from "../../../database";
 import {AUTH_STORE} from "../../../database/storages/auth";
+import {FormError, INITIAL_ERROR_STATE} from "../Login.helpers";
 
 interface FormState {
     [SignUpFields.login]: string;
@@ -23,6 +24,7 @@ export const useSignUpState = () => {
     const [formState, setFormState] = useState<FormState>(INITIAL_FORM_STATE);
     const [submitDisabled, setSubmitDisabled] = useState(true);
     const navigate = useNavigate();
+    const [error, setError] = useState<FormError>(INITIAL_ERROR_STATE);
 
     const {setUsername, db} = useAppContext();
 
@@ -44,12 +46,19 @@ export const useSignUpState = () => {
             if (result) {
                 // TODO notification
                 navigate(AppPaths.LOGIN);
+            } else {
+                setFormState(INITIAL_FORM_STATE);
+                setError({
+                    hasError: true,
+                    message: '' // todo
+                })
             }
         }
     }
 
     return {
         formState,
+        error,
         submitDisabled,
         onInputChange,
         onSubmit

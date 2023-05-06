@@ -10,6 +10,7 @@ import {renderInput} from "../Login.helpers";
 export const SignInForm = () => {
     const {
         formState,
+        error,
         pathname,
         onInputChange,
         onSubmit,
@@ -33,6 +34,7 @@ export const SignInForm = () => {
                 disabled={submitDisabled}
                 onClick={() => onSubmit}
             />
+            {error.hasError && <p className='login-error-desc'>{error.message}</p>}
             <Link
                 className='login-link'
                 label='Нет учетной записи?'

@@ -7,7 +7,7 @@ import {SignUpFields, SignUpFieldLabels} from "./SignUp.constants";
 import {renderInput} from "../Login.helpers";
 
 export const SignUpView = () => {
-    const { formState, submitDisabled, onSubmit, onInputChange} = useSignUpState();
+    const { formState, submitDisabled, error, onSubmit, onInputChange} = useSignUpState();
 
     return (
         <form onSubmit={onSubmit}>
@@ -26,6 +26,7 @@ export const SignUpView = () => {
                 disabled={submitDisabled}
                 onClick={() => onSubmit}
             />
+            {error.hasError && <p className='login-error-desc'>{error.message}</p>}
         </form>
     );
 }
