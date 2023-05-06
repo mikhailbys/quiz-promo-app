@@ -1,13 +1,16 @@
 import React from "react";
-import {Input} from "../../../components/Input";
-import {SignInFieldLabels, SignInFields} from "./SignIn.constants";
+
 import {Button} from "../../../components/Button";
+import {Link} from "../../../components/Link";
+
 import {useSignInState} from "./SignIn.state";
-import './SignIn.styles.css';
+import {SignInFieldLabels, SignInFields} from "./SignIn.constants";
+import {renderInput} from "../Login.helpers";
 
 export const SignInForm = () => {
     const {
         formState,
+        pathname,
         onInputChange,
         onSubmit,
         submitDisabled
@@ -15,29 +18,25 @@ export const SignInForm = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <div className='login-title'>Войти</div>
-            <Input
-                key={SignInFields.login}
-                name={SignInFields.login}
-                label={SignInFieldLabels[SignInFields.login]}
-                value={formState[SignInFields.login]}
-                onChange={onInputChange}
-                required
-            />
-            <Input
-                key={SignInFields.password}
-                name={SignInFields.password}
-                label={SignInFieldLabels[SignInFields.password]}
-                type='password'
-                value={formState[SignInFields.password]}
-                onChange={onInputChange}
-                required
-            />
+            <div className='login-form-title'>Войти</div>
+            {Object.values(SignInFields).map(key => {
+                return renderInput(
+                    SignInFields[key],
+                    SignInFieldLabels[SignInFields[key]],
+                    formState[SignInFields[key]],
+                    onInputChange
+                );
+            })}
             <Button
                 label='Войти'
                 type='submit'
                 disabled={submitDisabled}
                 onClick={() => onSubmit}
+            />
+            <Link
+                className='login-link'
+                label='Нет учетной записи?'
+                href={`${pathname}/#signup`}
             />
         </form>
     );

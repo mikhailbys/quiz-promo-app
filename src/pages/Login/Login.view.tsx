@@ -1,18 +1,22 @@
+import {useLocation} from "react-router-dom";
+
 import {SignInForm} from "./SignIn";
 import {SignUpView} from "./SignUp";
+
 import './Login.styles.css';
-import {useLocation} from "react-router-dom";
-import {Link} from "../../components/Link";
+import {AppPaths} from "../../Router/Router.helpers";
+import {Backward} from "../../components/Backward";
+import React from "react";
 
 export const Login = () => {
-    const {pathname, hash} = useLocation();
+    const { hash} = useLocation();
 
     return (
         <div className='login-page-container'>
-            <div className='form-container'>
+            {hash && <Backward to={AppPaths.LOGIN}/>}
+            <div className={hash ? 'signup-form-container' : 'signin-form-container'}>
                 {hash ? <SignUpView /> : <SignInForm />}
             </div>
-            {!hash && <Link className='login-link' label='Нет учетной записи?' href={`${pathname}/#signup`} />}
         </div>
     );
 }

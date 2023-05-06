@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useAppContext} from "../../../contexts/App.context";
 import {InputChangeEvent} from "../../../components/Input";
 import {SignInFields} from "./SignIn.constants";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {initAuthModel} from "../../../database";
 import {AUTH_STORE, AuthFields} from "../../../database/storages/auth";
 import {AppPaths} from "../../../Router/Router.helpers";
@@ -22,6 +22,7 @@ export const useSignInState = () => {
     const navigate = useNavigate();
     const [formState, setFormState] = useState<FormState>(INITIAL_FORM_STATE);
     const [submitDisabled, setSubmitDisabled] = useState(true);
+    const {pathname} = useLocation();
 
     useEffect(() => {
         setSubmitDisabled(Object.values(formState).some(v => v === ''));
@@ -48,6 +49,7 @@ export const useSignInState = () => {
 
     return {
         formState,
+        pathname,
         submitDisabled,
         onInputChange,
         onSubmit

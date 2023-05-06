@@ -6,7 +6,7 @@ export const Home = () => {
     return (
         <Page>
             <div>
-                <h1 className='home-title'>Новое на канале</h1>
+                <h2 className='home-title'>Новое на канале</h2>
                 <EmbeddedPlayer embedId="_WlzH7Dp-vQ" />
             </div>
         </Page>

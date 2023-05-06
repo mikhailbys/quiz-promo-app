@@ -4,20 +4,39 @@
     padding: 48px 32px;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 24px;
+.signin-form-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
 }
 
-.form-container div:not(:last-child) {
+.signup-form-container {
+    position: relative;
+    top: 35%;
+    transform: translateY(35%);
+}
+
+.signup-form-container div:not(:last-child):not(:first-child),
+.signin-form-container div:not(:first-child) {
     margin-bottom: 24px;
 }
 
-.form-container div:last-child {
+.signup-form-container div:last-child {
     margin-top: 48px;
+}
+
+.signin-form-container div:nth-child(4) {
+    margin-top: 42px;
 }
 
 .login-link {
     margin-top: 24px;
+}
+
+.login-form-title {
+    text-align: center;
+    color: darkslategray;
+    font-weight: 900;
+    margin-bottom: 32px;
+    font-size: 22px;
 }

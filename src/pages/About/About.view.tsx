@@ -1,8 +1,8 @@
 import {Page} from "../../components/Page";
 import {Card} from "../../components/Card";
 import {cardContent, CardContent, Anchor} from "./About.helpers";
-import './About.styles.css';
 import {Link} from "../../components/Link";
+import './About.styles.css';
 
 export const About = () => {
 
